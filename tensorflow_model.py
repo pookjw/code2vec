@@ -154,11 +154,13 @@ class Code2VecModel(Code2VecModelBase):
             # Each iteration = batch. We iterate as long as the tf iterator (reader) yields batches.
             try:
                 while True:
-                    exit()
                     top_words, top_scores, original_names, code_vectors = self.sess.run(
                         [self.eval_top_words_op, self.eval_top_values_op,
                          self.eval_original_names_op, self.eval_code_vectors],
                     )
+                    if self.config.EXPORT_CODE_VECTORS:
+                        self._write_code_vectors(code_vectors_file, code_vectors)
+                        exit()
 
                     # shapes:
                     #   top_words: (batch, top_k);   top_scores: (batch, top_k)
