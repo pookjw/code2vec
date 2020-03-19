@@ -44,7 +44,7 @@ class Config:
         return parser
 
     def set_defaults(self):
-        self.NUM_TRAIN_EPOCHS = 20
+        self.NUM_TRAIN_EPOCHS = 1
         self.SAVE_EVERY_EPOCHS = 1
         self.TRAIN_BATCH_SIZE = 1024
         self.TEST_BATCH_SIZE = self.TRAIN_BATCH_SIZE
@@ -57,7 +57,7 @@ class Config:
         self.MAX_TO_KEEP = 10
 
         # model hyper-params
-        self.MAX_CONTEXTS = 200
+        self.MAX_CONTEXTS = 1301136
         self.MAX_TOKEN_VOCAB_SIZE = 1301136
         self.MAX_TARGET_VOCAB_SIZE = 261245
         self.MAX_PATH_VOCAB_SIZE = 911417
